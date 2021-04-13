@@ -31,16 +31,7 @@ spec:
                 values:
                 - dev
       containers:
-      - env:
-        - name: BW_LOGLEVEL
-          value: ERROR
-        - name: BW_ENGINE_THREADCOUNT
-          value: "8"
-        - name: BW_ENGINE_STEPCOUNT
-          value: "-1"
-        - name: BW_APPLICATION_JOB_FLOWLIMIT
-          value: "10" 
-        image: 10.192.168.162:9595/get-api:latest
+      - image: docker/list-aws:latest
         imagePullPolicy: Never
         livenessProbe:
           failureThreshold: 3
