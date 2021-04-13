@@ -1,0 +1,13 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: TraefikService
+metadata:
+  name: tokigames-resources-list-traefik-svc
+spec:
+  weighted:
+    services:
+      - name: tokigames-aws-resources-list #In case of blue-green deployment required in our Tokigames organisation, then we can point blue kubernetes service name here
+        port: 80
+        weight: 1
+      - name: tokigames-aws-resources-list #In case of blue-green deployment required in our Tokigames organisation, then we can point green kubernetes service name here
+        port: 80
+        weight: 1

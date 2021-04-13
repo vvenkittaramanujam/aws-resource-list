@@ -1,0 +1,13 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: tokigames-resources-list-ingressroute
+spec:
+  entryPoints:
+    - http
+  routes:
+  - match: PathPrefix(`/`)
+    kind: Rule
+    services:
+    - name: tokigames-resources-list-traefik-svc
+      kind: TraefikService
